@@ -11,15 +11,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.zqy.http.request.OKRequest;
-import com.zqy.http.request.StringCallback;
-import com.zqy.sdk.utils.core.AppUtils;
-import com.zqy.sdk.utils.core.GlideUtil;
-import com.zqy.sdk.utils.core.JsonUtils;
-import com.zqy.sdk.utils.core.ToastUtil;
-import com.zqy.sdk.utils.logger.Logger;
-import com.zqy.sdk.utils.virtual.EasyProtectorLib;
-import com.zqy.sdk.utils.virtual.EmulatorCheckCallback;
+import com.zqy.sdk.superhttp.request.StringCallback;
+import com.zqy.sdk.superhttp.request.SuperHttpRequest;
+import com.zqy.sdk.superutils.core.AppUtils;
+import com.zqy.sdk.superutils.core.GlideUtil;
+import com.zqy.sdk.superutils.core.JsonUtils;
+import com.zqy.sdk.superutils.core.ToastUtil;
+import com.zqy.sdk.superutils.logger.Logger;
+import com.zqy.sdk.superutils.virtual.EasyProtectorLib;
+import com.zqy.sdk.superutils.virtual.EmulatorCheckCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -113,7 +113,7 @@ public class ActivitySdkUtilTest extends Activity implements View.OnClickListene
                             case "请求测试":
                                 HashMap<String, Object> hashMap = new HashMap<>();
                                 hashMap.put("qudaoNumber", "yueshenghuo100");
-                                OKRequest.get("http://zhuan.admin.zhangqingyou.top:8090/news/getappsetting.do", hashMap, new StringCallback() {
+                                SuperHttpRequest.get("http://zhuan.admin.zhangqingyou.top:8090/news/getappsetting.do", hashMap, new StringCallback() {
                                     @Override
                                     public void onSuccess(String body) {
                                         Logger.d("请求结果：" + body);

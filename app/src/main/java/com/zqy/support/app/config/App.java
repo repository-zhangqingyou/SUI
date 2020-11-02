@@ -5,9 +5,9 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.zqy.google.android.Android;
-import com.zqy.http.HttpManage;
-import com.zqy.sdk.sui.SUIManage;
-import com.zqy.sdk.utils.core.UtilsManage;
+import com.zqy.sdk.superhttp.SuperHttpManage;
+import com.zqy.sdk.superui.SuperUIManage;
+import com.zqy.sdk.superutils.core.SuperUtilsManage;
 
 
 /**
@@ -46,9 +46,9 @@ public class App extends Application {
      *
      */
     private void initModule() {
-        UtilsManage.init(getApplication());
-        HttpManage.init(getApplication());
-        SUIManage.init(getApplication());
+        SuperUtilsManage.init(getApplication());
+        SuperHttpManage.init(getApplication());
+        SuperUIManage.init(getApplication());
     }
 
 
